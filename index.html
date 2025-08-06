@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Assistente de IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container" id="container-principal">
+    <h2>Assistente de IA</h2>
+
+    <label for="api-key">OpenAI API Key:</label><br>
+    <input type="text" id="api-key" placeholder="***********************************"><br><br>
+
+    <label for="modelo">Modelo:</label><br>
+    <select id="modelo">
+      <option>GPT-4.1 Nano</option>
+      <option>GPT-4.1</option>
+      <option>GPT-3.5</option>
+    </select><br><br>
+
+    <label for="pergunta">Pergunta:</label><br>
+    <textarea id="pergunta" rows="3" cols="40" readonly>Qual é a função de um framework no desenvolvimento web?</textarea><br><br>
+
+    <button onclick="mostrarResposta()">Perguntar</button>
+
+    <div class="resposta-box" id="resposta-box">
+      <h3>Resposta da IA:</h3>
+      <p id="texto-resposta">Clique em Perguntar para ver a resposta.</p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarResposta() {
+      const resposta = "Um framework no desenvolvimento web fornece uma estrutura pronta com ferramentas, bibliotecas e padrões que facilitam e agilizam a criação de aplicações, permitindo que o desenvolvedor foque mais na lógica do negócio do que em detalhes de implementação técnica repetitiva.";
+      document.getElementById('texto-resposta').innerText = resposta;
+    }
+  </script>
+
+</body>
+</html>
