@@ -1,0 +1,38 @@
+body {
+  margin: 16px 200px 0px 200px;
+  background-color: #f7f7f7;
+}
+
+#container-principal {
+  background-color: #ffffff;
+  padding: 10px 50px 40px 50px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  background-color: #2b3e4d;
+}
+
+.key-model {
+  background-color: #2b3e4d;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.pergunta-box {
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  margin: 50px 5px 0px 5px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.resposta-box p {
+  background-color: aliceblue;
+  padding: 5px 0px 50px 5px;
+}
