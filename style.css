@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); /* Para navegadores mais antigos */
+  clip-path: inset(50%); /* Para navegadores modernos */
+  white-space: nowrap;
+  border: 0;
+}
+
+body {
+  background-color: #eaeaea;
+  min-height: 100vh; /* Use min-height para permitir que o conteúdo se expanda */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinhar ao topo, não centralizar verticalmente */
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Como #container-principal foi removido do HTML, então  o main pode assumir essa função de container centralizado */
+main {
+  background-color: #ffffff;
+  width: 900px; /* Largura original do container-principal */
+  max-width: 95%; /* Responsividade */
+  border: 3px solid black;
+  border-radius: 6px;
+  padding: 20px; /* Adicionado padding para o conteúdo interno do main */
+  margin: 20px auto; /* para centralizar a main e adicionar margem */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre as seções dentro do main */
+}
+
+header {
+  background-color: #2b3e4d;
+  padding: 25px 0;
+  color: #adb9c6;
+  text-align: center; /* Centraliza o texto do cabeçalho */
+  width: 100%; /* Para garantir que o header ocupe a largura total */
+  margin-bottom: 20px; /* Espaçamento abaixo do header */
+}
+
+header h1 {
+  margin-bottom: 12px; /* Espaçamento abaixo do h1 no header */
+  font-size: 28px;
+}
+
+header p {
+  font-size: 16px;
+}
+
+/* Estilos para as seções de formulário (Configurações e Pergunta) */
+section[aria-labelledby] {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+section[aria-labelledby] h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #0056b3;
+}
+
+/* Estilos para os formulários dentro das seções */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaçamento entre os campos do formulário */
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="password"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+/* Estilos para a barra de ferramentas (toolbar) na seção de pergunta */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.toolbar .actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos para os botões */
+button {
+  height: 40px;
+  padding: 0 15px; /* Ajustado padding para altura fixa */
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para a seção de resposta */
+#responseSection {
+  background-color: #f1f1f1; 
+  padding: 30px; 
+  border-radius: 6px;
+  border: 1px solid #eee; 
+}
+
+#responseSection h2 {
+  margin-bottom: 15px; /* Espaçamento abaixo do h2 da resposta */
+}
+
+#questionEcho {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#responseText {
+  padding: 15px; /* Padding para o conteúdo da resposta */
+  min-height: 100px; 
+  background-color: #fff;
+  border: 1px solid #ddd; /* Borda para o box da resposta */
+  border-radius: 4px;
+  white-space: pre-wrap; /* Para preservar quebras de linha da IA */
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Estilos para o indicador de carregamento */
+#loading {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 40px; /* Espaçamento acima do rodapé */
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+    height: auto;
+    border-width: 2px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  header {
+    padding: 16px 0;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  section[aria-labelledby] {
+    padding: 10px;
+  }
+
+  section[aria-labelledby] h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .toolbar .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #responseText {
+    min-height: 80px;
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  form label,
+  #questionEcho,
+  #status,
+  footer small {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #responseText {
+    font-size: 13px;
+  }
+}
+

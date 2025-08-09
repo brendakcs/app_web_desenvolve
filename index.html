@@ -14,7 +14,7 @@
 
   <!-- Cabeçalho -->
   <header>
-    <h1><i class="fas fa-robot"></i>Assistente de IA</h1>
+    <h1><i class="fas fa-robot"></i> Assistente de IA</h1>
     <p>Obtenha respostas inteligentes para suas perguntas</p>
   </header>
 
@@ -23,7 +23,7 @@
     <!-- Seção de configuração do modelo da API -->
     <section aria-labelledby="configuracoes">
       <form id="configForm" autocomplete="off">
-        <label for="api-key"><i class="fas fa-key"></i>Chave da API Gemini:</label>
+        <label for="api-key"><i class="fas fa-key"></i> Chave da API Gemini:</label>
         <input type="password" id="api-key" placeholder="Insira a sua chave API aqui">
 
         <label for="modelSelect">Modelo:</label>
@@ -38,10 +38,10 @@
     <section aria-labelledby="titulo-pergunta">
 
       <!-- section aria-labelledby="titulo-pergunta", agrupa a funcionalidade de pergunta e descreve a seção, enquanto o id='titulo pergunta' descreve o titulo da secao-->
-      <h2 id="titulo-pergunta">Sua pergunta</h2>
+      <h2 id="titulo-pergunta">Faça aqui sua pergunta:</h2>
       <form id="questionForm">
-        <label class="sr-only" for="userInput">Digite sua pergunta</label>
-        <textarea id="userInput" rows="5" placeholder="Digite sua pergunta..."></textarea>
+        <label class="sr-only" for="userInput">Faça aqui sua pergunta:</label>
+        <textarea id="userInput" rows="5" placeholder="Ex: Qual é a função de um framework no desenvolvimento web?"></textarea>
         <div class="toolbar">
           <span id="charCount" aria-live="polite">0 caracteres</span>
           <div class="actions">
@@ -51,7 +51,7 @@
           </div>
         </div>
 
-        <small>Dica: pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar.</small>
+        <small>Dica: pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em 'Perguntar'.</small>
       </form>
     </section>
 
@@ -59,7 +59,7 @@
     <section id="responseSection" aria-labelledby="resposta" hidden>
       <h2 id="resposta">Resposta da IA</h2>
       <div id="questionEcho" aria-live="polite"></div>
-      <article id="responseText" aria-live="polite">Clique em "Perguntar" para ver a resposta.</article>
+      <article id="responseText" aria-live="polite">pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em 'Perguntar'</article>
       <p id="status" role="status" aria-live="polite"></p>
     </section>
 
