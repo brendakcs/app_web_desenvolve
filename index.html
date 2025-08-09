@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Assistente de IA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Serve para incluir a biblioteca de ícones vetoriais e logotipos do Font Awesome na página HTML. Ex.: Robôs, lixeiras, carrinhos de compra, engrenagem e etc.-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
+
 <body>
   
   <div class="container" id="container-principal"> 
     
     <header>
 
-      <h2 class="titulo">Assistente de IA</h2>   
-  
-      <div class="key-model">
-  
-        <div class="key">
-          <label for="api-key">OpenAI API Key:</label>
-          <input type="text" id="api-key" placeholder="******************************">
+  <!-- Cabeçalho -->
+  <header>
+    <h1><i class="fas fa-robot"></i> Assistente de IA</h1>
+    <p>Obtenha respostas inteligentes para suas perguntas</p>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Seção de configuração do modelo da API -->
+    <section aria-labelledby="configuracoes">
+      <form id="configForm" autocomplete="off">
+        <label for="api-key"><i class="fas fa-key"></i> Chave da API Gemini:</label>
+        <input type="password" id="api-key" placeholder="Insira a sua chave API aqui">
+
+        <label for="modelSelect">Modelo:</label>
+        <select id="modelSelect">
+          <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+          <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+        </select>
+      </form>
+    </section>
+
+    <!-- Seção de pergunta -->
+    <section aria-labelledby="titulo-pergunta">
+
+      <!-- section aria-labelledby="titulo-pergunta", agrupa a funcionalidade de pergunta e descreve a seção, enquanto o id='titulo pergunta' descreve o titulo da secao-->
+      <h2 id="titulo-pergunta">Faça aqui sua pergunta:</h2>
+      <form id="questionForm">
+        <label class="sr-only" for="userInput">Faça aqui sua pergunta:</label>
+        <textarea id="userInput" rows="5" placeholder="Ex: Qual é a função de um framework no desenvolvimento web?"></textarea>
+        <div class="toolbar">
+          <span id="charCount" aria-live="polite">0 caracteres</span>
+          <div class="actions">
+            <button type="submit" id="askButton">Perguntar</button>
+            <button type="button" id="clearBtn">Limpar</button>
+            <button type="button" id="copyBtn">Copiar Resposta</button>
+          </div>
         </div>
-      
-        <div class="model">
-          <label for="modelo">Modelo:</label>
-          <select id="modelo">
-          <option>GPT-4.1 Nano</option>
-          <option>GPT-4.1</option>
-          <option>GPT-3.5</option>
-          </select>
-        </div>
-  
-      </div>
 
-    </header>
+        <small>Dica: pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em 'Perguntar'.</small>
+      </form>
+    </section>
 
-    <label class="answer" for="pergunta">Faça sua pergunta:</label>
-    <div class="pergunta-box">          
-      <textarea id="pergunta" rows="5" cols="85" readonly>Qual é a função de um framework no desenvolvimento web?</textarea>
-      <button onclick="mostrarResposta()">Perguntar</button>
-    </div>
+    <!-- Seção de resposta -->
+    <section id="responseSection" aria-labelledby="resposta" hidden>
+      <h2 id="resposta">Resposta da IA</h2>
+      <div id="questionEcho" aria-live="polite"></div>
+      <article id="responseText" aria-live="polite">pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em 'Perguntar'</article>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
 
-    <div class="resposta-box" id="resposta-box">
-      <h3>Resposta da IA:</h3>
-      <p id="texto-resposta">Clique em Perguntar para ver a resposta.</p>
-    </div>
+    <!-- Indicador de carregamento -->
+    <div id="loading" style="display: none;" role="status" aria-live="polite">Carregando...</div>
+  </main>
 
-  </div>
+  <!-- Rodapé -->
+  <footer>
+    <small>Construído com HTML, CSS e JavaScript puro. Requer uma API Key do Google AI Studio (Gemini), em modo
+      compatível com OpenAI.</small>
+  </footer>
 
   <script src="script.js"></script>
 
 </body>
+
 </html>
