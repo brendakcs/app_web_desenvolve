@@ -1,0 +1,61 @@
+/* Media Queries/* 
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+  #container-principal {
+    width: 95%;
+    height: auto;
+    border-width: 2px;
+  }
+
+  .key-model {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pergunta-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pergunta-box textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .resposta-box {
+    padding: 20px;
+  }
+
+  .resposta-box p {
+    min-height: 80px;
+    font-size: 14px;
+  }
+
+  header {
+    padding: 16px 0;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+}
+
+/* Ajustes para celulares muito pequenos */
+@media (max-width: 480px) {
+  .key-model label,
+  .answer {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .resposta-box p {
+    font-size: 13px;
+  }
+}
+
