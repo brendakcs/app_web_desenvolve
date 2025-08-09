@@ -18,11 +18,11 @@ Este projeto é uma aplicação web interativa que permite aos usuários interag
 
 ## 👥 Participantes
 
-- **Alicia Nascimento**
-- **Brenda Kalahare**
-- **Davis Esmael**
-- **Leticia B24**
-- **Lilian Santos**
+- **[Alicia Nascimento](https://github.com/ALTERAR_AQUI)** 
+- **[Brenda Kalahare](https://github.com/brendakcs)** 
+- **[Davis Esmael](https://github.com/ALTERAR_AQUI)** 
+- **[Leticia Barauna](https://github.com/ALTERAR_AQUI)** 
+- **[Lilian Santos](https://github.com/ALTERAR_AQUI)** 
 
 ## 🚀 Como Usar
 
