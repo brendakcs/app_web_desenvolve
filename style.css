@@ -18,14 +18,16 @@
 }
 
 body {
-  background-color: #eaeaea;
+  /* background-color: #eaeaea; */
+  background-color: #2b3e4d;
   min-height: 100vh; /* Use min-height para permitir que o conteúdo se expanda */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Alinhar ao topo, não centralizar verticalmente */
+  justify-content: space-between; /* Distribui elementos verticalmente */
   font-family: Arial, sans-serif;
   color: #333;
+  padding: 0; /* Remove padding para usar toda a tela */
 }
 
 /* Como #container-principal foi removido do HTML, então  o main pode assumir essa função de container centralizado */
@@ -40,6 +42,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Espaçamento entre as seções dentro do main */
+  flex: 1; /* Faz o main expandir para ocupar o espaço disponível */
+  justify-content: space-between; /* Distribui as seções verticalmente */
 }
 
 header {
@@ -48,7 +52,7 @@ header {
   color: #adb9c6;
   text-align: center; /* Centraliza o texto do cabeçalho */
   width: 100%; /* Para garantir que o header ocupe a largura total */
-  margin-bottom: 20px; /* Espaçamento abaixo do header */
+  flex-shrink: 0; /* Impede que o header seja comprimido */
 }
 
 header h1 {
@@ -136,7 +140,9 @@ button:hover {
   background-color: #f1f1f1; 
   padding: 30px; 
   border-radius: 6px;
-  border: 1px solid #eee; 
+  border: 1px solid #eee;
+  flex: 1; /* Permite que a seção de resposta expanda conforme necessário */
+  min-height: 200px; /* Altura mínima para garantir espaço adequado */
 }
 
 #responseSection h2 {
@@ -174,20 +180,64 @@ button:hover {
 
 /* Rodapé */
 footer {
-  margin-top: 40px; /* Espaçamento acima do rodapé */
+  margin-top: 20px; /* Espaçamento reduzido acima do rodapé */
   text-align: center;
   color: #777;
   font-size: 14px;
+  flex-shrink: 0; /* Impede que o footer seja comprimido */
+  padding: 20px 0; /* Adiciona padding para melhor espaçamento */
+}
+
+footer .footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer .footer-content p {
+  margin: 0.5em 0;
+}
+
+footer .footer-content .tech-stack {
+  font-weight: 500;
+}
+
+footer .footer-content .html-color {
+  color: #61dafb;
+}
+
+footer .footer-content .css-color {
+  color: #2965f1;
+}
+
+footer .footer-content .js-color {
+  color: #f7df1e;
+}
+
+footer .footer-content .team-name {
+  font-weight: bold;
+}
+
+footer .footer-content .api-link {
+  color: #61dafb;
+  text-decoration: underline;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
+  body {
+    justify-content: flex-start; /* Em mobile, volta ao comportamento normal */
+    padding: 10px; /* Adiciona padding em dispositivos móveis */
+  }
+
   main {
     width: 95%;
     height: auto;
     border-width: 2px;
     padding: 15px;
     gap: 15px;
+    flex: none; /* Remove o flex em mobile para comportamento normal */
+    justify-content: flex-start; /* Comportamento normal em mobile */
+    margin: 10px auto; /* Reduz a margem em mobile */
   }
 
   header {
@@ -227,8 +277,13 @@ footer {
     font-size: 14px;
   }
 
+  #responseSection {
+    min-height: 150px; /* Altura mínima reduzida em mobile */
+  }
+
   footer {
     margin-top: 20px;
+    padding: 15px 0; /* Reduz o padding em mobile */
   }
 }
 

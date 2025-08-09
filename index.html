@@ -2,83 +2,91 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assistente de IA</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Serve para incluir a biblioteca de ícones vetoriais e logotipos do Font Awesome na página HTML. Ex.: Robôs, lixeiras, carrinhos de compra, engrenagem e etc.-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Assistente de IA</title>
+	<link rel="stylesheet" href="style.css" />
+	<!-- Serve para incluir a biblioteca de ícones vetoriais e logotipos do Font Awesome na página HTML. Ex.: Robôs, lixeiras, carrinhos de compra, engrenagem e etc.-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-  
-  <div class="container" id="container-principal"> 
-    
-    <header>
 
-  <!-- Cabeçalho -->
-  <header>
-    <h1><i class="fas fa-robot"></i> Assistente de IA</h1>
-    <p>Obtenha respostas inteligentes para suas perguntas</p>
-  </header>
+	<div class="container" id="container-principal">
+			<!-- Cabeçalho -->
+			<header>
+				<h1><i class="fas fa-robot"></i> Assistente de IA</h1>
+				<p>Obtenha respostas inteligentes para suas perguntas</p>
+			</header>
+			<!-- Conteúdo principal -->
+			<main>
+				<!-- Seção de configuração do modelo da API -->
+				<section aria-labelledby="configuracoes">
+					<form id="configForm" autocomplete="off">
+						<label for="api-key"><i class="fas fa-key"></i> Chave da API Gemini:</label>
+						<input type="password" id="api-key" placeholder="Insira a sua chave API aqui">
 
-  <!-- Conteúdo principal -->
-  <main>
-    <!-- Seção de configuração do modelo da API -->
-    <section aria-labelledby="configuracoes">
-      <form id="configForm" autocomplete="off">
-        <label for="api-key"><i class="fas fa-key"></i> Chave da API Gemini:</label>
-        <input type="password" id="api-key" placeholder="Insira a sua chave API aqui">
+						<label for="modelSelect">Modelo:</label>
+						<select id="modelSelect">
+							<option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+							<option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+						</select>
+					</form>
+				</section>
+				<!-- Seção de pergunta -->
+				<section aria-labelledby="titulo-pergunta">
+					<!-- section aria-labelledby="titulo-pergunta", agrupa a funcionalidade de pergunta e descreve a seção, enquanto o id='titulo pergunta' descreve o titulo da secao-->
+					<h2 id="titulo-pergunta">Faça aqui sua pergunta:</h2>
+					<form id="questionForm">
+						<label class="sr-only" for="userInput">Faça aqui sua pergunta:</label>
+						<textarea id="userInput" rows="5"
+							placeholder="Ex: Qual é a função de um framework no desenvolvimento web?"></textarea>
+						<div class="toolbar">
+							<span id="charCount" aria-live="polite">0 caracteres</span>
+							<div class="actions">
+								<button type="submit" id="askButton">Perguntar</button>
+								<button type="button" id="clearBtn">Limpar</button>
+								<button type="button" id="copyBtn">Copiar Resposta</button>
+							</div>
+						</div>
 
-        <label for="modelSelect">Modelo:</label>
-        <select id="modelSelect">
-          <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
-          <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
-        </select>
-      </form>
-    </section>
+						<small>Dica: pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em
+							'Perguntar'.</small>
+					</form>
+				</section>
+				<!-- Seção de resposta -->
+				<section id="responseSection" aria-labelledby="resposta" hidden>
+					<h2 id="resposta">Resposta da IA</h2>
+					<div id="questionEcho" aria-live="polite"></div>
+					<article id="responseText" aria-live="polite">pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para
+						enviar ou clique em 'Perguntar'</article>
+					<p id="status" role="status" aria-live="polite"></p>
+				</section>
 
-    <!-- Seção de pergunta -->
-    <section aria-labelledby="titulo-pergunta">
+				<!-- Indicador de carregamento -->
+				<div id="loading" style="display: none;" role="status" aria-live="polite">Carregando...</div>
+			</main>
+			<!-- Rodapé -->
+			<footer>
+				<div class="footer-content">
+					<p>
+						<i class="fas fa-code"></i>
+						<span class="tech-stack">Construído com <span class="html-color">HTML</span>, <span
+								class="css-color">CSS</span> e <span class="js-color">JavaScript</span> puro.</span>
+					</p>
+					<p>
+						<i class="fas fa-users"></i>
+						Desenvolvido pela equipe <span class="team-name">VingaDevs</span>.
+					</p>
+					<p>
+						<i class="fas fa-key"></i>
+						<small>Requer uma API Key do <a href="https://aistudio.google.com/app/apikey" target="_blank"
+								class="api-link">Google AI Studio (Gemini)</a>, compatível com OpenAI.</small>
+					</p>
+				</div>
+			</footer>
 
-      <!-- section aria-labelledby="titulo-pergunta", agrupa a funcionalidade de pergunta e descreve a seção, enquanto o id='titulo pergunta' descreve o titulo da secao-->
-      <h2 id="titulo-pergunta">Faça aqui sua pergunta:</h2>
-      <form id="questionForm">
-        <label class="sr-only" for="userInput">Faça aqui sua pergunta:</label>
-        <textarea id="userInput" rows="5" placeholder="Ex: Qual é a função de um framework no desenvolvimento web?"></textarea>
-        <div class="toolbar">
-          <span id="charCount" aria-live="polite">0 caracteres</span>
-          <div class="actions">
-            <button type="submit" id="askButton">Perguntar</button>
-            <button type="button" id="clearBtn">Limpar</button>
-            <button type="button" id="copyBtn">Copiar Resposta</button>
-          </div>
-        </div>
-
-        <small>Dica: pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em 'Perguntar'.</small>
-      </form>
-    </section>
-
-    <!-- Seção de resposta -->
-    <section id="responseSection" aria-labelledby="resposta" hidden>
-      <h2 id="resposta">Resposta da IA</h2>
-      <div id="questionEcho" aria-live="polite"></div>
-      <article id="responseText" aria-live="polite">pressione <kbd>Ctrl</kbd> + <kbd>Enter</kbd> para enviar ou clique em 'Perguntar'</article>
-      <p id="status" role="status" aria-live="polite"></p>
-    </section>
-
-    <!-- Indicador de carregamento -->
-    <div id="loading" style="display: none;" role="status" aria-live="polite">Carregando...</div>
-  </main>
-
-  <!-- Rodapé -->
-  <footer>
-    <small>Construído com HTML, CSS e JavaScript puro. Requer uma API Key do Google AI Studio (Gemini), em modo
-      compatível com OpenAI.</small>
-  </footer>
-
-  <script src="script.js"></script>
+			<script src="script.js"></script>
 
 </body>
-
 </html>
