@@ -35,15 +35,14 @@ main {
   background-color: #ffffff;
   width: 900px; /* Largura original do container-principal */
   max-width: 95%; /* Responsividade */
-  border: 3px solid black;
+  /* border: 3px solid black; */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   padding: 20px; /* Adicionado padding para o conteúdo interno do main */
   margin: 20px auto; /* para centralizar a main e adicionar margem */
   display: flex;
   flex-direction: column;
   gap: 20px; /* Espaçamento entre as seções dentro do main */
-  flex: 1; /* Faz o main expandir para ocupar o espaço disponível */
-  justify-content: space-between; /* Distribui as seções verticalmente */
 }
 
 header {
