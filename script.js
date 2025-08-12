@@ -11,9 +11,10 @@ const perguntaEco = document.getElementById("questionEcho");
 const statusElement = document.getElementById("status");
 const charCountElement = document.getElementById("charCount");
 
-// Acrescentar o checkbox e o toggle key depois - obs Lembrar de colocar no HTML tbm
-const saveKeyCheckbox = null;  // Para salvar a chave api no navegador - 'local storage'
-const toggleKeyButton = null; // Para mostrar ou ocultar a chave API
+// Adicionado em utils.js
+// // Acrescentar o checkbox e o toggle key depois - obs Lembrar de colocar no HTML tbm
+// const saveKeyCheckbox = null;  // Para salvar a chave api no navegador - 'local storage'
+// const toggleKeyButton = null; // Para mostrar ou ocultar a chave API
 
 // 2. Constantes
 const GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/";
