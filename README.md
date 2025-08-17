@@ -8,18 +8,26 @@ Este projeto é uma aplicação web interativa que permite aos usuários interag
 
 ### 🌟 Principais Funcionalidades
 
-- Interface intuitiva para interação com IA
-- Integração com a API Google Gemini
-- Seleção de diferentes modelos de IA
-- Sistema de configuração de chave API
-- Design responsivo para diferentes dispositivos
-- Contador de caracteres para perguntas
-- Funcionalidades de copiar e limpar respostas
+- ✨ **Interface moderna e intuitiva** para conversas com IA
+- 🤖 **Integração com Google Gemini** (Flash e Pro)
+- 🔐 **Gerenciamento seguro de API Key** (salvar, ocultar, limpar)
+- 📱 **Design responsivo** para desktop e mobile
+- 📊 **Contador de caracteres** em tempo real
+- 📋 **Copiar e limpar respostas** com um clique
+
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização e responsividade
+- **JavaScript ES6+** - Lógica da aplicação
+- **Google Gemini API** - Inteligência Artificial
+- **Font Awesome** - Ícones
 
 ## 👥 Participantes
 
 - **[Alicia Nascimento](https://github.com/Aliciaestefany01)** 
-- **[Brenda Kalahare](https://github.com/brendakcs)** 
+- **[Brenda Kalahare](https://github.com/brendakcs)**
+- **[Christal Camillo](https://github.com/ChristalCamillo)**
 - **[Davis Esmael](https://github.com/DavisEsmael)** 
 - **[Leticia Barauna](https://github.com/LeticiaB24)** 
 - **[Lilian Santos](https://github.com/LilianMS)** 
@@ -38,31 +46,49 @@ Este projeto é uma aplicação web interativa que permite aos usuários interag
    cd app_web_desenvolve
    ```
 
-2. **Abra o arquivo `index.html`** em seu navegador web
+2. **Abra no navegador:**
+   - Abra o arquivo `index.html` em seu navegador
 
-3. **Configure a API:**
-   - Insira sua chave da API Google Gemini no campo apropriado
-   - Selecione o modelo de IA desejado
+3. **Configure sua API Key:**
+   - Obtenha sua chave em [Google AI Studio](https://aistudio.google.com/app/apikey)
+   - Cole a chave no campo indicado
+   - Opcionalmente, salve a chave para uso futuro
 
-4. **Faça sua pergunta:**
-   - Digite sua pergunta na área de texto
-   - Clique em "Perguntar" para obter a resposta
-
-5. **Gerencie as respostas:**
-   - Use o botão "Copiar" para copiar a resposta
-   - Use o botão "Limpar" para limpar a conversa
+4. **Comece a conversar:**
+   - Digite sua pergunta
+   - Clique em "Perguntar" ou use `Ctrl + Enter`
+   - Copie ou limpe as respostas conforme necessário
 
 ### 📁 Estrutura do Projeto
 
 ```
 app_web_desenvolve/
-├── index.html          # Página principal
-├── style.css           # Estilos da aplicação
-├── script.js           # Lógica JavaScript
-├── README.md           # Documentação
-└── docs/               # Documentação adicional
+├── index.html              # Página principal
+├── src/                    # Código fonte
+│   ├── style.css          #   Estilos da aplicação
+│   ├── extra_style.css    #   Estilos adicionais
+│   ├── script.js          #   Lógica principal
+│   ├── utils.js           #   Funções utilitárias
+│   └── img/               #   Recursos visuais
+│       └── robot.svg      #     Ícone do robô
+├── docs/                   # Documentação
+│   ├── README.md          #   Notas da equipe
+│   └── *.pdf              #   Especificações do projeto
+├── .gitignore             # Arquivos ignorados pelo Git
+└── README.md              # Documentação principal
 ```
 
 ## 🎯 Objetivo
 
-Projeto desenvolvido como parte do Programa Desenvolve, uma parceria entre Boticário e Koru, com foco no aprendizado de desenvolvimento web frontend e integração com APIs de IA.
+Projeto educacional desenvolvido como parte do **Programa Desenvolve** (Boticário + Koru), focando no aprendizado de:
+- Desenvolvimento web frontend moderno
+- Integração com APIs de Inteligência Artificial
+- Trabalho colaborativo em equipe
+- Boas práticas de desenvolvimento
+
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ pela equipe <strong>VingaDevs</strong></p>
+  <p><em>Programa Desenvolve 2025 - Boticário & Koru</em></p>
+</div>
