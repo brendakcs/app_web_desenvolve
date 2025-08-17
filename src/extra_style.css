@@ -1,0 +1,75 @@
+#status.error {
+	color: #dc3545;
+	font-weight: bold;
+}
+
+#status.success {
+	color: #28a745;
+	font-weight: bold;
+}
+
+.api-key-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.api-key-container input {
+	width: 100%;
+	padding-right: 45px;
+}
+
+.toggle-btn {
+	position: absolute;
+	right: 5px;
+	width: 35px;
+	height: 30px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: #666;
+}
+
+.toggle-btn:hover {
+	background-color: #fff;
+	color: #333;
+}
+
+.api-key-container input[type="text"],
+.api-key-container input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	padding-right: 45px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.fa-eye-slash {
+	color: #007bff;
+}
+
+.save-api-key-container {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0.98em;
+	color: #444;
+}
+
+.save-api-key-container label {
+	cursor: pointer;
+	user-select: none;
+}
+
+@media (max-width: 600px) {
+	.save-api-key-container {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 8px;
+	}
+	body, main{
+		min-width: 320px;
+	}
+}
+
