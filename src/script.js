@@ -98,7 +98,7 @@ async function handlePerguntar(event) {
 
   clearStatus();
   const resposta = await enviarPerguntaParaIA(pergunta, modelo, apiKey);
-  textoResposta.textContent = resposta;
+  handleResponse(resposta);
 }
 
 function handleLimpar() {
@@ -108,6 +108,13 @@ function handleLimpar() {
   respostaWrapper.hidden = true;
   clearStatus();
   updateCharCount();
+}
+
+// Depois de receber uma resposta, mover o foco pra area da resposta
+function handleResponse(resposta) {
+  textoResposta.textContent = resposta;
+  textoResposta.focus(); // Move o foco pra resposta
+  textoResposta.setAttribute('aria-live', 'polite'); // Para leitores de tela
 }
 
 function handleCopiar() {
@@ -135,7 +142,21 @@ perguntaTextarea.addEventListener("keydown", (event) => {
 // 7. Inicialização
 function init() {
   updateCharCount();
-  handleLimpar(); // Reset UI ao carregar
+  handleLimpar();
+
+  // Adição de atributos ARIA para acessibilidade
+  perguntaTextarea.setAttribute('aria-label', 'Digite sua pergunta');
+  apiKeyInput.setAttribute('aria-label', 'Insira sua chave API');
+  modeloSelect.setAttribute('aria-label', 'Selecione o modelo de IA');
+
+  // Para botões
+  perguntarButton.setAttribute('aria-label', 'Enviar pergunta');
+  limparButton.setAttribute('aria-label', 'Limpar conversa');
+  copiarButton.setAttribute('aria-label', 'Copiar resposta');
+
+  // Area de status para leitores de tela
+  statusElement.setAttribute('role', 'status');
+  statusElement.setAttribute('aria-live', 'polite');
 }
 
 init();
