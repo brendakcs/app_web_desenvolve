@@ -15,6 +15,11 @@ Este projeto é uma aplicação web interativa que permite aos usuários interag
 - 📊 **Contador de caracteres** em tempo real
 - 📋 **Copiar e limpar respostas** com um clique
 
+### ♿ features de acessibilidade
+
+- 😎 **HTML com aria accesible labels** o html foi criado com ARIA labels de forma a tornar acessivel a leitor de telas 
+- **JavaScript com gerenciamento de atributos** foco para acessibilidade de leitores de tela e simplicidade de uso
+- **Adição de atributos ARIA** na inicialização do app
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5** - Estrutura semântica
